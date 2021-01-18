@@ -100,7 +100,7 @@ extension Publisher {
         var cancellable: Cancellable?
         cancellable = sink(
             receiveCompletion: { _ in
-                cancellable?.cancel()
+                _ = cancellable
                 cancellable = nil
             },
             receiveValue: { _ in }
